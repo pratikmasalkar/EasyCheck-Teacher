@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarkAttendance">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/headerBg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/backbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_arw"
+                android:onClick="dashboard"
+                android:paddingTop="10dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/backbtn"
+                android:gravity="center"
+                android:onClick="dashboard"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="Dashboard"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="View Attendance"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/belowHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="22dp"
+            android:text="Select Batch :"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/teacherBatchSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginLeft="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/belowHeader"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:text="Select Date :"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/selectDateSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/selectedBatchTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FYMCA"
+                android:fontFamily="@font/abril_fatface"
+                android:letterSpacing="0.2"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/selectedBatchSubjectTV"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/text_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Count : "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/addedStudentCountTv"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TableLayout
+
+            android:id="@+id/studentsTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:stretchColumns="1,2,3,4">
+
+            <TableRow
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_column="1"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingLeft="20dp"
+                    android:text="Roll No"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_column="2"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_column="3"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Code"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_column="4"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Status"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" />
+        </TableLayout>
+        <Button
+            android:id="@+id/exportButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Export to Excel"
+            android:onClick="exportToExcelOnClick" />
+
+    </LinearLayout>
+
+</RelativeLayout>
